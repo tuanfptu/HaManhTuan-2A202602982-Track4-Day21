@@ -1,0 +1,98 @@
+{
+  "device": "NVIDIA GeForce GTX 1660 Ti",
+  "pytorch": "2.1.2+cu121",
+  "cuda": "12.1",
+  "frame_id": "000011",
+  "warmup": 3,
+  "timed_runs": 20,
+  "mean_ms": 66.95205999567406,
+  "p50_ms": 66.46604998968542,
+  "p95_ms": 71.04445498844143,
+  "min_ms": 62.55049997707829,
+  "max_ms": 72.99679997959174,
+  "config": {
+    "point_cloud_range": [
+      0,
+      -39.68,
+      -3,
+      69.12,
+      39.68,
+      1
+    ],
+    "voxel_size": [
+      0.16,
+      0.16,
+      4
+    ],
+    "class_names": [
+      "Pedestrian",
+      "Cyclist",
+      "Car"
+    ],
+    "score_thr": 0.1,
+    "nms": {
+      "use_rotate_nms": true,
+      "nms_across_levels": false,
+      "nms_thr": 0.01,
+      "nms_pre": 100,
+      "max_num": 50
+    },
+    "test_pipeline": [
+      {
+        "type": "LoadPointsFromFile",
+        "coord_type": "LIDAR",
+        "load_dim": 4,
+        "use_dim": 4,
+        "backend_args": null
+      },
+      {
+        "type": "MultiScaleFlipAug3D",
+        "img_scale": [
+          1333,
+          800
+        ],
+        "pts_scale_ratio": 1,
+        "flip": false,
+        "transforms": [
+          {
+            "type": "GlobalRotScaleTrans",
+            "rot_range": [
+              0,
+              0
+            ],
+            "scale_ratio_range": [
+              1.0,
+              1.0
+            ],
+            "translation_std": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "type": "RandomFlip3D"
+          },
+          {
+            "type": "PointsRangeFilter",
+            "point_cloud_range": [
+              0,
+              -39.68,
+              -3,
+              69.12,
+              39.68,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Pack3DDetInputs",
+        "keys": [
+          "points"
+        ]
+      }
+    ],
+    "sweeps": "single-frame KITTI PointPillars, no temporal multi-sweep aggregation"
+  }
+}
