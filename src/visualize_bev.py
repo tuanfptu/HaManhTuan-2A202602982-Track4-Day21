@@ -41,7 +41,7 @@ def render(frame: str, detections: list[dict], data_root: Path, output: Path,
     if highlight:
         x, y = highlight['gt_center_xy']
         ax.scatter([y], [x], marker='x', s=180, linewidths=3, color='magenta', label='KITTI GT center')
-        ax.annotate(highlight['text'], (y, x), xytext=(y + 3, x + 3), color='magenta',
+        ax.annotate(highlight['text'], (y, x), xytext=(y + 5, x - 8), color='black',
                     arrowprops=dict(arrowstyle='->', color='magenta'), fontsize=9,
                     bbox=dict(facecolor='white', alpha=.85, edgecolor='magenta'))
     ax.set(xlim=(-40, 40), ylim=(-10, 75), xlabel='LiDAR y (m, left)', ylabel='LiDAR x (m, forward)',

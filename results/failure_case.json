@@ -1,0 +1,17 @@
+{
+  "frame_id": "000009",
+  "class_name": "Car",
+  "score": 0.32208186388015747,
+  "range_m": 68.56738780873529,
+  "occluded": 0,
+  "points_in_gt": 1,
+  "gt_center_xy": [
+    68.53177431837817,
+    2.2096560113246415
+  ],
+  "failure_type": "GT-associated detection dropped by threshold",
+  "low_threshold": 0.1,
+  "high_threshold": 0.5,
+  "matching_rule": "same class, BEV center distance <= 2 m; proxy, not IoU",
+  "figure": "results/figures/fail_01_threshold_drop_000009.png"
+}

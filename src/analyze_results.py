@@ -165,7 +165,7 @@ def main() -> None:
         failure.pop('predictions')
         failure.update(low_threshold=first, high_threshold=last,
                        matching_rule='same class, BEV center distance <= 2 m; proxy, not IoU',
-                       figure=str(path.relative_to(ROOT)))
+                       figure=path.relative_to(ROOT).as_posix())
         (args.results_dir / 'failure_case.json').write_text(json.dumps(failure, indent=2), encoding='utf-8')
         print(json.dumps(failure, indent=2))
     else:
