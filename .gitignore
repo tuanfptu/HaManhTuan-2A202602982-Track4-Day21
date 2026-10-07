@@ -5,6 +5,10 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+.detector-venv/
+.uv-cache/
+.uv-python/
+external/
 .ipynb_checkpoints/
 
 # Bí mật
