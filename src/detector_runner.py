@@ -1,6 +1,6 @@
 """Run the official MMDetection3D KITTI PointPillars checkpoint on one LiDAR frame.
 
-Model/config source: https://github.com/open-mmlab/mmdetection3d/tree/main/configs/pointpillars
+Model/config source: https://github.com/open-mmlab/mmdetection3d/tree/v1.4.0/configs/pointpillars
 """
 from __future__ import annotations
 

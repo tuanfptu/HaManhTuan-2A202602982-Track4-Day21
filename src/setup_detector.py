@@ -1,6 +1,6 @@
 """Download the official MMDetection3D PointPillars KITTI config and checkpoint.
 
-Sources: https://github.com/open-mmlab/mmdetection3d/blob/main/configs/pointpillars/metafile.yml
+Sources: https://github.com/open-mmlab/mmdetection3d/blob/v1.4.0/configs/pointpillars/metafile.yml
 The files are stored below Git-ignored external/ and are never committed.
 """
 from __future__ import annotations
